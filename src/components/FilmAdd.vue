@@ -27,7 +27,7 @@ export default {
   setup() {
     const form = reactive({ name: '' })
 
-    
+    //Function that submits new film to firestore through the addFilm function in firebase.js
     const onSubmit = async () => {
       const name = form.name
       form.name = ''

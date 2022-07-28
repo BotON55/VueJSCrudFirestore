@@ -1,3 +1,7 @@
+<!--
+Component that allows you to edit films
+It gets as parameter a film id
+-->
 <template>
     <form @submit.prevent="onSubmit">
     <div class="input-group mb-3">
@@ -10,14 +14,18 @@
 </template>
 
 <script>
+//Import updateFilm function from firebase.js
 import { updateFilm } from '@/firebase'
+//Import reactive function from vue
 import { reactive } from 'vue'
 
 export default {
+  //String that stores the id of the film associated to the component
   props: {id:String},
   setup(props) {
     const form = reactive({ name: '' })
 
+    //Function that updates film names
     const onSubmit = async () => {
       const name = form.name
       form.name = ''
